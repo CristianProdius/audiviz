@@ -1,4 +1,3 @@
-// components/Hero/Hero.tsx
 import Image from "next/image";
 import Link from "next/link";
 
@@ -47,7 +46,7 @@ const Hero = () => {
             </div>
 
             {/* Floating Cards */}
-            <div className="hidden sm:flex absolute top-[-10px] right-[-15px] lg:right-[-15px] bg-white p-3 rounded-xl shadow-lg items-center gap-2 z-20 flex-col scale-75 lg:scale-100">
+            <div className="hidden sm:flex absolute top-[-10px] right-0 lg:right-[-15px] bg-white p-3 rounded-xl shadow-lg items-center gap-2 z-20 flex-col scale-75 lg:scale-100">
               <div className="bg-[#9747FF]/10 p-2 rounded-lg">
                 <Image
                   src="/icons/basketball.png"

@@ -38,22 +38,17 @@ const Services = () => {
 
   return (
     <section className="relative px-4 py-16 bg-[#FAF9F6]">
-      {/* Decorative Dots */}
-      <div className="absolute top-12 left-12 w-3 h-3 rounded-full bg-[#FF725E]" />
-      <div className="absolute bottom-12 right-12 w-3 h-3 rounded-full bg-[#FF725E]" />
-      <div className="absolute top-1/2 left-1/3 w-3 h-3 rounded-full bg-[#1E2959]" />
-
       <div className="max-w-7xl mx-auto">
         {/* Container for flexible layout */}
         <div className="lg:flex lg:gap-12">
           {/* Main Content */}
           <div className="lg:w-1/2 lg:flex lg:items-center lg:justify-center mb-16 lg:mb-0 text-center lg:text-left">
             <div className="lg:max-w-xl">
-              <h1 className="text-4xl font-bold text-[#1E2959] mb-4">
+              <h2 className="text-4xl font-bold text-[#1E2959] mb-4">
                 Suntem Un <span className="text-[#9747FF]">ONG</span> Dedicat
                 Copiilor Cu Deficiențe De{" "}
                 <span className="text-[#9747FF]">Auz Si Văz</span>
-              </h1>
+              </h2>
               <p className="text-gray-700 mb-8">
                 Suntem o echipă pasionată de a face o diferență în viața
                 copiilor cu nevoi speciale. Oferim terapie, educație și suport
