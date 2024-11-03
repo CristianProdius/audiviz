@@ -2,15 +2,9 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Image from "next/image";
-import { motion } from "framer-motion"; // First install: npm install framer-motion
+import { motion } from "framer-motion";
 
 export default function Despre() {
-  const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 },
-  };
-
   return (
     <main className="min-h-screen bg-gray-50">
       <Header />
@@ -51,7 +45,10 @@ export default function Despre() {
           <h1 className="text-[#1E3A8A] text-4xl md:text-5xl font-bold text-center leading-tight">
             Despre Asociația De Suport Familial De Recuperare Timpurie A
             Copiilor Cu Deficiențe De Auz Și Văz{" "}
-            <span className="text-purple-600 italic"> "AudiViz" </span>
+            <span className="text-purple-600 italic">
+              {" "}
+              &quot;AudiViz&quot;{" "}
+            </span>
           </h1>
 
           <p className="text-center text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -106,11 +103,11 @@ export default function Despre() {
           <div className="space-y-4">
             <p className="text-gray-700 text-center text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
               Această pagină web a fost creată cu sprijinul financiar al Uniunii
-              Europene. În cadrul Proiectului „EVOLVE4GE - Accelerarea
+              Europene. În cadrul Proiectului &quot;EVOLVE4GE - Accelerarea
               egalității de gen, asigurând abilitarea femeilor prin oportunități
-              economice, combaterea violenței și guvernarea sensibilă la gen"
-              implementat de UN Women Moldova. Conținutul acesteia reprezintă
-              responsabilitatea exclusivă a AO „AudiViz"
+              economice, combaterea violenței și guvernarea sensibilă la
+              gen&quot; implementat de UN Women Moldova. Conținutul acesteia
+              reprezintă responsabilitatea exclusivă a AO &quot;AudiViz&quot;
             </p>
 
             <p className="text-gray-500 text-center text-xs md:text-sm italic">

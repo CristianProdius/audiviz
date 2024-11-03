@@ -134,7 +134,7 @@ export default function Doneaza() {
               <div>
                 <h3 className="font-semibold mb-2">Transfer Bancar</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>Beneficiar: AO "AudiViz"</li>
+                  <li>Beneficiar: AO &quot;AudiViz&quot;</li>
                   <li>IBAN: MD12XXXXXXXXXXXXX</li>
                   <li>Banca: Example Bank</li>
                   <li>Cod Fiscal: 123456789</li>
@@ -143,8 +143,9 @@ export default function Doneaza() {
               <div>
                 <h3 className="font-semibold mb-2">Important</h3>
                 <p className="text-gray-600">
-                  Vă rugăm să menționați "Donație" în descrierea transferului.
-                  Veți primi o confirmare pe email după procesarea donației.
+                  Vă rugăm să menționați &quot;Donație&quot; în descrierea
+                  transferului. Veți primi o confirmare pe email după procesarea
+                  donației.
                 </p>
               </div>
             </div>
