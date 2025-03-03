@@ -52,10 +52,9 @@ export default function Despre() {
           </h1>
 
           <p className="text-center text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            este o asociație non-profit, care activează în interesul
-            copiilor/tinerilor cu deficiențe de auz și văz și a familiilor
-            acestora, pentru a depăși barierele cu care se confruntă în domeniul
-            social, medical și educațional.
+            Audiviz este o organizație dedicată îmbunătățirii vieții copiilor și
+            tinerilor cu deficiențe de auz și văz. Credem că fiecare copil,
+            tânăr are dreptul la o copilărie fericită și la oportunități egale.
           </p>
 
           {/* Purple Button */}
@@ -103,7 +102,7 @@ export default function Despre() {
           <div className="space-y-4">
             <p className="text-gray-700 text-center text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
               Această pagină web a fost creată cu sprijinul financiar al Uniunii
-              Europene. În cadrul Proiectului &quot;EVOLVE4GE - Accelerarea
+              Europene, în cadrul Proiectului „EVOLVE4GE - Accelerarea
               egalității de gen, asigurând abilitarea femeilor prin oportunități
               economice, combaterea violenței și guvernarea sensibilă la
               gen&quot; implementat de UN Women Moldova. Conținutul acesteia
@@ -117,7 +116,7 @@ export default function Despre() {
 
             {/* Logos Container */}
             <div className="flex flex-wrap items-center justify-center gap-8 mt-6">
-              <div className="w-[120px] h-[40px] md:w-[140px] md:h-[45px] relative">
+              <div className="w-[160px] h-[60px] md:w-[180px] md:h-[65px] relative">
                 <Image
                   src="/sponsors/EU.png"
                   alt="Finanțat de Uniunea Europeană"
