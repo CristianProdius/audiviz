@@ -43,8 +43,8 @@ export default function Despre() {
           className="space-y-8"
         >
           <h1 className="text-[#1E3A8A] text-4xl md:text-5xl font-bold text-center leading-tight">
-            Despre Asociația De Suport Familial De Recuperare Timpurie A
-            Copiilor Cu Deficiențe De Auz Și Văz{" "}
+            Despre Asociația de Suport Familial de Recuperare Timpurie a
+            Copiilor cu Deficiențe de Auz și Văz{" "}
             <span className="text-purple-600 italic">
               {" "}
               &quot;AudiViz&quot;{" "}

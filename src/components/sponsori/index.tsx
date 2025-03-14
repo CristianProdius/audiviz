@@ -11,12 +11,12 @@ const Sponsors = () => {
       height: 60,
     },
     {
-      name: "UN-WOMEN",
+      name: "EVOLVE",
       width: 180,
       height: 60,
     },
     {
-      name: "EVOLVE",
+      name: "UN-WOMEN",
       width: 180,
       height: 60,
     },
