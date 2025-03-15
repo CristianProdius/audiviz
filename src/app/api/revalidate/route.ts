@@ -15,6 +15,7 @@ export default async function handler(
   try {
     await res.revalidate(path);
   } catch (err) {
+    console.error("Error revalidating path:", err);
     return res.status(500).send("Error revalidating page");
   }
 
