@@ -35,11 +35,11 @@ export async function GET(request: Request): Promise<Response> {
       };
     }
     return NextResponse.json(response);
-  } catch (error: any) {
+  } catch (error: unknown) {
     return NextResponse.json(
       {
         message: "Error revalidating",
-        error: error.message,
+        error: error instanceof Error ? error.message : String(error),
       },
       { status: 500 }
     );
