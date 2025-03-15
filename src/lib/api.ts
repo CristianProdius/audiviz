@@ -75,7 +75,7 @@ export async function getAllPosts() {
 }
 
 // Function to fetch a single post by slug
-export async function getPostBySlug(slug: any) {
+export async function getPostBySlug(slug: string) {
   const { data } = await client.query({
     query: gql`
       query GetPost($slug: ID!) {
