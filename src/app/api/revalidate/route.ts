@@ -1,33 +1,25 @@
-import { NextRequest, NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
+import { NextApiRequest, NextApiResponse } from "next";
 
-export async function GET(request: NextRequest) {
-  // Get the URL parameters
-  const searchParams = request.nextUrl.searchParams;
-  const path = searchParams.get("path") || "";
-  const token = searchParams.get("token") || "";
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const { path, token } = req.query;
 
-  // Check the token and path
   if (token !== process.env.SECRET_TOKEN) {
-    return NextResponse.json({ message: "Invalid token" }, { status: 401 });
-  } else if (path.length === 0) {
-    return NextResponse.json({ message: "Path is required" }, { status: 401 });
+    return res.status(401).json({ message: "Invalid token" });
+  } else if (!path || typeof path !== "string" || path.length === 0) {
+    return res.status(401).json({ message: "Path is required" });
   }
 
   try {
-    // Use revalidatePath instead of res.revalidate
-    revalidatePath(path);
-
-    return NextResponse.json({
-      revalidated: true,
-      message: `Path ${path} revalidated successfully`,
-      now: Date.now(),
-    });
+    await res.revalidate(path);
   } catch (err) {
-    console.error(err);
-    return NextResponse.json(
-      { message: "Error revalidating page" },
-      { status: 500 }
-    );
+    return res.status(500).send("Error revalidating page");
   }
+
+  return res.status(200).json({
+    revalidated: true,
+    message: `Path ${path} revalidated successfully`,
+  });
 }
