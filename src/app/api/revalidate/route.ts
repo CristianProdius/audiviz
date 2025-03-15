@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
   const token = searchParams.get("token") || "";
 
   // Check the token and path
-  if (token !== process.env.REVALIDATION_SECRET) {
+  if (token !== process.env.SECRET_TOKEN) {
     return NextResponse.json({ message: "Invalid token" }, { status: 401 });
   } else if (path.length === 0) {
     return NextResponse.json({ message: "Path is required" }, { status: 401 });
