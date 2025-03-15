@@ -1,40 +1,46 @@
-// app/api/revalidate/route.js (or .ts)
-import { NextRequest, NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
-
-interface RevalidateRequest extends NextRequest {
-  url: string;
-}
+import { NextResponse } from "next/server";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 interface RevalidateResponse {
-  revalidated?: boolean;
+  revalidated: boolean;
   message: string;
+  error?: string;
 }
 
-export async function GET(
-  request: RevalidateRequest
-): Promise<NextResponse<RevalidateResponse>> {
+export async function GET(request: Request): Promise<Response> {
   const { searchParams } = new URL(request.url);
   const path: string | null = searchParams.get("path");
   const token: string | null = searchParams.get("token");
 
-  if (token !== process.env.SECRET_TOKEN) {
+  // Verify the secret token
+  if (token !== process.env.SECRET_KEY) {
     return NextResponse.json({ message: "Invalid token" }, { status: 401 });
-  } else if (!path || path.length === 0) {
-    return NextResponse.json({ message: "Path is required" }, { status: 401 });
   }
 
   try {
-    revalidatePath(path);
-
-    return NextResponse.json({
-      revalidated: true,
-      message: `Path ${path} revalidated successfully`,
-    });
-  } catch (err) {
-    console.error("Error revalidating path:", err);
+    let response: RevalidateResponse;
+    if (path) {
+      // Revalidate the specific path
+      revalidatePath(path);
+      response = {
+        revalidated: true,
+        message: `Path ${path} revalidated`,
+      };
+    } else {
+      // If no path specified, revalidate the entire site
+      revalidatePath("/");
+      response = {
+        revalidated: true,
+        message: "Site revalidated",
+      };
+    }
+    return NextResponse.json(response);
+  } catch (error: any) {
     return NextResponse.json(
-      { message: "Error revalidating page" },
+      {
+        message: "Error revalidating",
+        error: error.message,
+      },
       { status: 500 }
     );
   }
