@@ -1,4 +1,3 @@
-// app/api/revalidate/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 
@@ -9,7 +8,7 @@ export async function GET(request: NextRequest) {
   const token = searchParams.get("token") || "";
 
   // Check the token and path
-  if (token !== process.env.SECRET_TOKEN) {
+  if (token !== process.env.REVALIDATION_SECRET) {
     return NextResponse.json({ message: "Invalid token" }, { status: 401 });
   } else if (path.length === 0) {
     return NextResponse.json({ message: "Path is required" }, { status: 401 });
